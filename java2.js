@@ -4,8 +4,6 @@ var values = {}
 function getValues () {
   values.height = document.getElementById("userHeight").value;
   values.character = document.getElementById("userChar").value;
-  /*console.log(values.height);
-  console.log(values.character); */
 }
 
 function makeTree (values) {
