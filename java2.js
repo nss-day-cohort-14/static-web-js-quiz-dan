@@ -1,6 +1,7 @@
 
 var values = {}
 
+
 var htmlPage = document.getElementById('tree')
 
 
@@ -29,6 +30,7 @@ function makeTree (values) {
     alert("Both fields must have a value.")
    }
    else {
+
    console.log("height:", values.height);
    console.log("character:", values.character);
 
@@ -37,6 +39,7 @@ function makeTree (values) {
 
     /*prints top line of tree */
   for (var i = 0; i < heightNum; i++) {  
+
       line += spaceValue;
     }
   line += values.character;
@@ -60,6 +63,7 @@ function makeTree (values) {
     }
     }
 }
+
 }
 
 var button = document.getElementById("button");
@@ -84,7 +88,6 @@ document.getElementById("userHeight")
     makeTree (values);
     }
 })
-
 
 document.getElementById("DOM")
   .addEventListener("keyup", function(event) {
