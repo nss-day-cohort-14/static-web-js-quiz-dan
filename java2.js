@@ -2,12 +2,13 @@
 var values = {}
 
 var htmlPage = document.getElementById('tree')
-htmlPage.innerHTML = "";
+
 
 var spaceValue;
 var lineSubstr;
 
 function getValues () {
+  htmlPage.innerHTML = "";
   spaceValue= "&nbsp;";
   lineSubstr = 6;
   values.height = document.getElementById("userHeight").value;
@@ -24,9 +25,10 @@ function makeTree (values) {
   if ((values.console.checked === false) && (values.DOM.checked === false)) {
     alert("Select DOM or console.")
   }
-  if (values.height === "" || values.character === "" ) {
+   else if (values.height === "" || values.character === "" ) {
     alert("Both fields must have a value.")
    }
+   else {
    console.log("height:", values.height);
    console.log("character:", values.character);
 
@@ -39,10 +41,11 @@ function makeTree (values) {
     }
   line += values.character;
 
-  console.log("final:", line);
   var htmlPage = document.getElementById('tree')
   if (document.getElementById("DOM").checked) {
   htmlPage.innerHTML = '<p style="font-family:courier; line-height:30%;">' + line + "</p>";
+  } else {
+     console.log("final:", line);
   }
 
     /*prints rest of tree */
@@ -50,13 +53,13 @@ function makeTree (values) {
       line = line.substr(lineSubstr);
       line += values.character;
       line += values.character;
-      console.log("final:", line);
       if (document.getElementById("DOM").checked) {
       htmlPage.innerHTML += '<p style="font-family:courier; line-height:30%;">' + line + "</p>";
+    } else {
+       console.log("final:", line);
     }
     }
-
-  console.log("values", values);
+}
 }
 
 var button = document.getElementById("button");
